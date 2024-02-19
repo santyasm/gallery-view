@@ -38,8 +38,11 @@ const Home = () => {
     <View style={styles.container}>
       <FlatList
         data={photos}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
         renderItem={({item}) => (
-          <Image source={{uri: item.src.large}} style={{width, height}} />
+          <Image source={{uri: item.src.portrait}} style={{width, height}} />
         )}
         keyExtractor={item => item.id.toString()}
       />
